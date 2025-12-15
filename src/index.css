@@ -24,7 +24,7 @@ a:hover {
 
 body {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   text-align: center;
 }
@@ -58,4 +58,15 @@ button:focus-visible {
   height: 10vh;
   background-color: orange;
 }
+
+.imgCover {
+  max-width: 500px;
+}
+
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
 

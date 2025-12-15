@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
+import { Grid } from '@mantine/core'
 
 
 
@@ -27,14 +28,18 @@ function Home() {
   }, []);
 
     return (
-        <div>
-        <h1>Home</h1>
+        <div className="albums-grid">
+        
 
         {album.map((element, i, arr) => {
         return (
           <div key={i}>
-            <h3>{element.artist}</h3>
-            <p>{element.album}</p>
+            <img className="imgCover" src={element.cover}/>
+            <h3>{element.album}</h3>
+            <h4>{element.artist}</h4>
+            <p>{element.year}</p>
+            
+
           </div>
         );
       })}
