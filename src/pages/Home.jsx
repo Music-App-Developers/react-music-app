@@ -33,7 +33,7 @@ function Home() {
 
         {album.map((element, i, arr) => {
         return (
-          <div key={i}>
+          <div key={i} className="albums-card">
             <Link to = {`/album/${element.id}`}>
             <img className="imgCover" src={element.cover}/>
             </Link>
