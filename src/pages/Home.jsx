@@ -1,31 +1,31 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { Grid } from '@mantine/core'
+import { Link } from "react-router-dom";
 
 
 
 function Home() {
 
     const [album, setAlbum] = useState([])
+
+    
     
     useEffect(() => {
-    axios
-      .get('https://react-music-app-9c72c-default-rtdb.europe-west1.firebasedatabase.app/albums.json')
-      .then((response) => {
-  console.log("DATA:", response.data)
+  axios
+    .get("https://react-music-app-9c72c-default-rtdb.europe-west1.firebasedatabase.app/albums.json")
+    .then((response) => {
+      if (!response.data) return;
 
-  if (!response.data) {
-    console.log("No hay datos en Firebase");
-    return;
-  }
-
-  setAlbum(Object.values(response.data));
-})
-      .catch((error) => {
-        console.log('oops, there was an error getting the list of users..');
-        console.log(error);
-      });
-  }, []);
+      setAlbum(
+        Object.entries(response.data).map(([id, album]) => ({
+          id,
+          ...album
+        }))
+      );
+    })
+    .catch(console.error);
+}, []);
 
     return (
         <div className="albums-grid">
@@ -34,7 +34,9 @@ function Home() {
         {album.map((element, i, arr) => {
         return (
           <div key={i}>
+            <Link to = {`/album/${element.id}`}>
             <img className="imgCover" src={element.cover}/>
+            </Link>
             <h3>{element.album}</h3>
             <h4>{element.artist}</h4>
             <p>{element.year}</p>
