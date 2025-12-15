@@ -65,6 +65,10 @@ h1 {
   flex-basis: 31%;
 }
 
+.Loader {
+  margin: 20px auto;
+}
+
 @media (max-width: 800px) {
  body{
   display: flex;

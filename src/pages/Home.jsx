@@ -2,12 +2,13 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import { Grid } from '@mantine/core'
 import { Link } from "react-router-dom";
+import Loader from "../components/Loader";
 
 
 
 function Home() {
 
-    const [album, setAlbum] = useState([])
+    const [album, setAlbum] = useState(null)
 
     
     
@@ -26,6 +27,12 @@ function Home() {
     })
     .catch(console.error);
 }, []);
+
+
+    if (album === null) {
+        return <Loader/>
+    }
+
 
     return (
         <div className="albums-grid">
