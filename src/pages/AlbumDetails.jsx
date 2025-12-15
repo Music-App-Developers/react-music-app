@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function AlbumDetails() {
   const [album, setAlbum] = useState([]);
   const { albumId } = useParams();
+  const navigate = useNavigate()
 
   useEffect(() => {
     axios
@@ -31,6 +33,19 @@ function AlbumDetails() {
   if (!albumDetail) {
     return <p>Cargando álbum...</p>;
   }
+  
+
+  const deleteAlbum = () => {
+    axios.delete(`https://react-music-app-9c72c-default-rtdb.europe-west1.firebasedatabase.app/albums/${albumId}.json`)
+    .then((response) => {
+        navigate("/")
+    })
+    .catch((error) => {
+        console.log("error", error)
+    })
+  }
+
+
 
   return (
     <div>
@@ -39,6 +54,9 @@ function AlbumDetails() {
       <p>{albumDetail.year}</p>
       <img src={albumDetail.cover} alt={albumDetail.album} />
       <p>{albumDetail.tracklist}</p>
+      <button>Edit your Album</button>
+      <br />
+      <button onClick={deleteAlbum}>Delete</button>
     </div>
   );
 }

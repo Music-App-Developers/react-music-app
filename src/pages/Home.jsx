@@ -36,11 +36,11 @@ function Home() {
           <div key={i} className="albums-card">
             <Link to = {`/album/${element.id}`}>
             <img className="imgCover" src={element.cover}/>
-            </Link>
+            
             <h3>{element.album}</h3>
             <h4>{element.artist}</h4>
             <p>{element.year}</p>
-            
+            </Link>
 
           </div>
         );
