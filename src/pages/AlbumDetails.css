@@ -24,7 +24,7 @@ body {
 
 /* Header del álbum */
 .album-header {
-  display: flex;
+  display: center;
   gap: 24px;
   margin-bottom: 32px;
 }
@@ -105,6 +105,47 @@ body {
 .track:hover {
   background-color: #fafafa;
 }
+
+/*CSS Button
+
+/* Contenedor opcional */
+.btn-action {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Botón Editar */
+.btn-edit {
+  background-color: orange; /* azul */
+  color: #ffffff;
+}
+
+.btn-edit:hover {
+  background-color: orangered;
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Botón Delete */
+.btn-delete {
+  background-color: #ef4444; /* rojo */
+  color: #ffffff;
+}
+
+.btn-delete:hover {
+  background-color: #dc2626;
+  box-shadow: 0 6px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Efecto click */
+.btn-action:active {
+  transform: scale(0.96);
+}
+
 
 /* Responsive */
 @media (max-width: 600px) {

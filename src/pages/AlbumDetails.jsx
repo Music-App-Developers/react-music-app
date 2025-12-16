@@ -67,10 +67,10 @@ function AlbumDetails() {
 </ul>
       
       <Link to={`/albums/edit/${albumId}`}>
-      <button>Edit your Album</button>
+      <button className="btn-action btn-edit">Edit your Album</button>
       </Link>
       <br />
-      <button onClick={deleteAlbum}>Delete</button>
+      <button className="btn-action btn-delete" onClick={deleteAlbum}>Delete</button>
     </div>
   );
 }
