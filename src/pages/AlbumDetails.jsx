@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./AlbumDetails.css"
 
 function AlbumDetails() {
   const [album, setAlbum] = useState([]);
@@ -48,12 +49,23 @@ function AlbumDetails() {
 
 
   return (
-    <div>
-      <h1>{albumDetail.album}</h1>
-      <h2>{albumDetail.artist}</h2>
-      <p>{albumDetail.year}</p>
-      <img src={albumDetail.cover} alt={albumDetail.album} />
-      <p>{albumDetail.tracklist}</p>
+    <div className="album-container">
+      <h1 className="album-header">{albumDetail.album}</h1>
+      <img className="album-cover" src={albumDetail.cover} alt={albumDetail.album} />
+      <h2 className="album-artist">{albumDetail.artist}</h2>
+      <span className="album-year">{albumDetail.year}</span>
+      <h2 className="tracklist-title">Tracklist</h2>
+  <ul className="tracklist">
+  {albumDetail.tracklist
+    .split(",")
+    .map((track, index) => (
+      <li className="track" key={index}>
+        <span className="track-number">{index + 1}</span>
+        <span className="track-name">{track}</span>
+      </li>
+    ))}
+</ul>
+      
       <Link to={`/albums/edit/${albumId}`}>
       <button>Edit your Album</button>
       </Link>
