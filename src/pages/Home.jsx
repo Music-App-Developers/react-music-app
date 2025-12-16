@@ -8,7 +8,7 @@ import Loader from "../components/Loader";
 
 function Home() {
 
-    const [album, setAlbum] = useState(null)
+    const [album, setAlbum] = useState([])
 
     
     
@@ -16,7 +16,10 @@ function Home() {
   axios
     .get("https://react-music-app-9c72c-default-rtdb.europe-west1.firebasedatabase.app/albums.json")
     .then((response) => {
-      if (!response.data) return;
+      if (!response.data) {
+        setAlbum([]);
+        return;
+      }
 
       setAlbum(
         Object.entries(response.data).map(([id, album]) => ({
@@ -29,9 +32,11 @@ function Home() {
 }, []);
 
 
-    if (album === null) {
-        return <Loader/>
-    }
+
+    if (album.length === 0) {
+  return <Loader />;
+}
+
 
 
     return (

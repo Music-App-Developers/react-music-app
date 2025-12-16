@@ -1,3 +1,5 @@
+import axios from "axios"
+
 const albumsArr = [
   {
     "artist": "Robe",
@@ -43,10 +45,12 @@ const albumsArr = [
   }
 ]
 
+const BASE_URL = "https://react-music-app-9c72c-default-rtdb.europe-west1.firebasedatabase.app"
 
-albumsArr.forEach((albumDetails, i, arr) => {
-  axios.post(URL, albumDetails)
-    .then()
-    .catch()
+
+albumsArr.forEach((albumDetails, i) => {
+  axios.post(`${BASE_URL}/albums.json`, albumDetails)
+    .then( response => console.log(`Resource ${i} created`))
+    .catch( e => console.log(`Error: `, e))
 })
 
