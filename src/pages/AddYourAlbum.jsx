@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "./Form.css";
 
 
 function AddYourAlbum() {
@@ -34,72 +35,71 @@ function AddYourAlbum() {
 
     }
 
-    
+
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                Album:
-                <input
-                    type="text"
-                    name="album"
-                    placeholder="Enter your Album"
-                    required
-                    value={album}
-                    onChange={(e) => { setAlbum(e.target.value) }}
-                />
-            </label>
-            <br />
-            <label>
-                Artist:
-                <input
-                    type="text"
-                    name="artist"
-                    placeholder="Enter your Artist"
-                    required
-                    value={artist}
-                    onChange={(e) => { setArtist(e.target.value) }}
-                />
-            </label>
-            <br />
-            <label>
-                Year:
-                <input
-                    type="number"
-                    name="Year"
-                    placeholder="Enter Year"
-                    required
-                    value={year}
-                    onChange={(e) => { setYear(e.target.value) }}
-                />
-            </label>
-            <br />
-            <label>
-                Cover:
-                <input
-                    type="url"
-                    name="cover"
-                    placeholder="Enter your img"
-                    
-                    value={cover}
-                    onChange={(e) => { setCover(e.target.value) }}
-                />
-            </label>
-            <br />
-            <label>
-                Tracklist:
-                <input
-                    type="text"
-                    name="tracklist"
-                    placeholder="Enter your tracks"
-                    
-                    value={tracklist}
-                    onChange={(e) => { setTracklist(e.target.value) }}
-                />
-            </label>
-            <br />
-            <button>Create</button>
-                </form>
+        <form className="body" onSubmit={handleSubmit}>
+            <h2 className="form">Add album</h2>
+            <div className="music-form-group">
+                <label>
+                    <input
+                        type="text"
+                        name="album"
+                        placeholder="Album"
+                        required
+                        value={album}
+                        onChange={(e) => { setAlbum(e.target.value) }}
+                    />
+                </label>
+                <br />
+                <label>
+                    <input
+                        type="text"
+                        name="artist"
+                        placeholder="Album Artist"
+                        required
+                        value={artist}
+                        onChange={(e) => { setArtist(e.target.value) }}
+                    />
+                </label>
+                <br />
+                <label>
+                    <input
+                        type="number"
+                        name="Year"
+                        placeholder="Album Year"
+                        min={1940}
+                        max={2030}
+                        required
+                        value={year}
+                        onChange={(e) => { setYear(e.target.value) }}
+                    />
+                </label>
+                <br />
+                <label>
+                    <input
+                        type="url"
+                        name="cover"
+                        placeholder="Image Url"
+
+                        value={cover}
+                        onChange={(e) => { setCover(e.target.value) }}
+                    />
+                </label>
+                <br />
+                <label>
+                    <textarea
+                        type="text"
+                        name="tracklist"
+                        placeholder="Album Tracks"
+
+                        value={tracklist}
+                        onChange={(e) => { setTracklist(e.target.value) }}
+                    />
+                </label>
+            </div>
+            <button className="music-form-button">Create</button>
+        </form>
     )
 }
 export default AddYourAlbum

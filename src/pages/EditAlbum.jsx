@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
+import "./Form.css"
 
 
 
@@ -57,13 +58,15 @@ function EditAlbum() {
 
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="body" onSubmit={handleSubmit}>
+            <h2 className="form">Edit album</h2>
+            <div className="music-form-group">
             <label>
-                Album:
+
                 <input
                     type="text"
                     name="album"
-                    placeholder="Enter your Album"
+                    placeholder="Album"
                     required
                     value={album}
                     onChange={(e) => { setAlbum(e.target.value) }}
@@ -71,11 +74,10 @@ function EditAlbum() {
             </label>
             <br />
             <label>
-                Artist:
                 <input
                     type="text"
                     name="artist"
-                    placeholder="Enter your Artist"
+                    placeholder="Artist"
                     required
                     value={artist}
                     onChange={(e) => { setArtist(e.target.value) }}
@@ -83,11 +85,10 @@ function EditAlbum() {
             </label>
             <br />
             <label>
-                Year:
                 <input
                     type="number"
                     name="Year"
-                    placeholder="Enter Year"
+                    placeholder="Album Year"
                     required
                     value={year}
                     onChange={(e) => { setYear(e.target.value) }}
@@ -95,11 +96,10 @@ function EditAlbum() {
             </label>
             <br />
             <label>
-                Cover:
                 <input
                     type="url"
                     name="cover"
-                    placeholder="Enter your img"
+                    placeholder="Image URL"
 
                     value={cover}
                     onChange={(e) => { setCover(e.target.value) }}
@@ -107,18 +107,18 @@ function EditAlbum() {
             </label>
             <br />
             <label>
-                Tracklist:
                 <input
                     type="text"
                     name="tracklist"
-                    placeholder="Enter your tracks"
+                    placeholder="Album tracks"
 
                     value={tracklist}
                     onChange={(e) => { setTracklist(e.target.value) }}
                 />
             </label>
+            </div>
             <br />
-            <button>Edit</button>
+            <button className="music-form-button">Edit</button>
         </form>
     )
 }

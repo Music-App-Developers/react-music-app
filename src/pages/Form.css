@@ -1,0 +1,96 @@
+
+.music-form {
+    margin: 50px auto;
+    width: 100%;
+    max-width: 520px;
+    padding: 2rem;
+    border-radius: 16px;
+    background: #ffffff;
+    border: 1px solid #f1f1f1;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.music-form-title {
+    margin-bottom: 1.8rem;
+    text-align: center;
+    font-size: 1.9rem;
+    color: #ea580c;
+    letter-spacing: 0.5px;
+}
+
+
+.music-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.3rem;
+}
+
+
+.music-form-group label {
+    font-size: 0.8rem;
+    color: #7c2d12;
+    margin-bottom: 0.35rem;
+}
+
+
+.music-form-group input,
+.music-form-group textarea {
+    padding: 0.75rem 0.9rem;
+    margin-left: 5px;
+    border-radius: 12px;
+    min-width: 300px;
+    border: 1px solid #fed7aa;
+    background: #fff;
+    color: #1c1917;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+
+.music-form-group input::placeholder,
+.music-form-group textarea::placeholder {
+    color: #a8a29e;
+}
+
+.music-form-group input:focus,
+.music-form-group textarea:focus {
+    outline: none;
+    border-color: #fb923c;
+    box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.25);
+}
+
+.music-form-group textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.music-form-button {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    min-width: 100px;
+    padding: 0.8rem;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #fb923c, #ea580c);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: all 0.2s ease;
+}
+
+.music-form-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(234, 88, 12, 0.35);
+}
+
+.music-form-button:active {
+    transform: translateY(0);
+}
+
+.form{
+    margin:30px;
+    font-size: 50px;
+    color: #6B6B6B;
+}
