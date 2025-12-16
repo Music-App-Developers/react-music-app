@@ -1,12 +1,16 @@
 import { NavLink } from "react-router-dom"
+import "./NavBar.css"
 
 function NavBar () {
     return (
-        <nav className="navBar">
-            <h3>React Music App</h3>
-        <NavLink to = "/">Home</NavLink>
+        <nav className="navbar">
+            <h3 className="logo">React Music App</h3>
+            <div className="menu">
+                <NavLink  to = "/">Home</NavLink>
         <NavLink to = "/newalbum">Add your Album</NavLink>
-        <NavLink to = "/acercade">Acerca de</NavLink>
+        <NavLink to = "/acercade">About us</NavLink>
+            </div>
+        
         </nav>
     )
 }
