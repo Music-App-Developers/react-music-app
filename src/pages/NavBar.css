@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +18,7 @@
 /* Logo */
 .logo {
     color: #ffffff;
-    font-size: 20px;
+    font-size: 40px;
     font-weight: bold;
 }
 
@@ -27,8 +27,20 @@
     list-style: none;
     display: flex;
     gap: 25px;
+    font-size: 20px;
 }
 
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+}
+
+.menu li {
+  display: flex;
+}
 .menu li a {
     color: #ffffff;
     text-decoration: none;
@@ -40,4 +52,10 @@
 .menu li a:hover {
     background-color: #334155;
     border-radius: 4px;
+}
+
+.menu li a.active {
+  background-color: #f97316;
+  color: white;
+  border-radius: 4px;
 }
