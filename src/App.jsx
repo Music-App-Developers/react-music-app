@@ -5,6 +5,7 @@ import Home from "./pages/Home"
 import NavBar from "./pages/navBar"
 import { Route, Routes } from "react-router-dom"
 import AlbumDetails from "./pages/AlbumDetails"
+import EditAlbum from "./pages/EditAlbum"
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         <Route path = "/newalbum" element = {<AddYourAlbum/>}/>
         <Route path = "/acercade" element = {<AcerdaDe/>}/>
         <Route path="/album/:albumId" element={<AlbumDetails  />} />
+        <Route path="/albums/edit/:albumId" element={<EditAlbum  />} />
+
 
       </Routes>
 

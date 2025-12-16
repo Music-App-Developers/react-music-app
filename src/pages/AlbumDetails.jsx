@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -54,7 +54,9 @@ function AlbumDetails() {
       <p>{albumDetail.year}</p>
       <img src={albumDetail.cover} alt={albumDetail.album} />
       <p>{albumDetail.tracklist}</p>
+      <Link to={`/albums/edit/${albumId}`}>
       <button>Edit your Album</button>
+      </Link>
       <br />
       <button onClick={deleteAlbum}>Delete</button>
     </div>
