@@ -21,6 +21,7 @@
 
 .main-content {
   flex-grow: 1;
+  background-color: #ECDFC4;
 }
 
 a {
@@ -60,7 +61,7 @@ h1 {
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 31%;
-  background-color:burlywood;
+  background-color:#ECDFC4;
 }
 
 

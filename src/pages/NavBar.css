@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: grey;
+    background-color: #E5B864;
     padding: 15px 30px;
 }
 
@@ -50,12 +50,12 @@
 }
 
 .menu li a:hover {
-    background-color: #334155;
+    background-color: #734E57;
     border-radius: 4px;
 }
 
 .menu li a.active {
-  background-color: #f97316;
+  background-color: #904E55;
   color: white;
   border-radius: 4px;
 }
