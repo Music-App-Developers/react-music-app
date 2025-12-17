@@ -12,24 +12,25 @@ function App() {
 
 
   return (
-    <>
-    
+    <div className="app">
+
       <NavBar />
-      <Routes>
-        <Route path = "/" element = {<Home/>}/>
-        <Route path = "/newalbum" element = {<AddYourAlbum/>}/>
-        <Route path = "/acercade" element = {<AcerdaDe/>}/>
-        <Route path="/album/:albumId" element={<AlbumDetails  />} />
-        <Route path="/albums/edit/:albumId" element={<EditAlbum  />} />
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/newalbum" element={<AddYourAlbum />} />
+          <Route path="/acercade" element={<AcerdaDe />} />
+          <Route path="/album/:albumId" element={<AlbumDetails />} />
+          <Route path="/albums/edit/:albumId" element={<EditAlbum />} />
 
 
-      </Routes>
-
+        </Routes>
+      </div>
 
       <footer>
         <Footer />
       </footer>
-    </>
+    </div>
   )
 
 }
