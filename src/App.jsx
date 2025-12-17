@@ -6,18 +6,20 @@ import NavBar from "./pages/NavBar"
 import { Route, Routes } from "react-router-dom"
 import AlbumDetails from "./pages/AlbumDetails"
 import EditAlbum from "./pages/EditAlbum"
+import { useState } from "react"
 
 
 function App() {
 
+  const [search, setSearch] = useState("")
 
   return (
     <div className="app">
 
-      <NavBar />
+      <NavBar search={search} setSearch={setSearch}/>
       <div className="main-content">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home search={search} />} />
           <Route path="/newalbum" element={<AddYourAlbum />} />
           <Route path="/acercade" element={<AcerdaDe />} />
           <Route path="/album/:albumId" element={<AlbumDetails />} />

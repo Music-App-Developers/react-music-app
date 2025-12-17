@@ -1,17 +1,11 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
-import { Grid } from '@mantine/core'
-import { Link } from "react-router-dom";
-import Loader from "../components/Loader";
-import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
+import { Link } from "react-router-dom"
+import Loader from "../components/Loader"
+import { Card, Image, Text, Button, Group } from '@mantine/core'
 
-
-
-function Home() {
-
+function Home({ search }) {
   const [album, setAlbum] = useState([])
-
-
 
   useEffect(() => {
     axios
@@ -32,50 +26,49 @@ function Home() {
       .catch(console.error);
   }, []);
 
-
-
   if (album.length === 0) {
     return <Loader />;
   }
 
 
+  const filteredAlbums = album.filter(a =>
+    a.artist.toLowerCase().includes(search.toLowerCase()) ||
+    a.album.toLowerCase().includes(search.toLowerCase()) ||
+    a.year.toString().includes(search)
+  );
 
   return (
     <div className="albums-grid">
+      {filteredAlbums.map((element, i) => (
+        <div key={i} className="albums-card imgCover">
+          <Card shadow="sm" padding="lg" radius="md" withBorder>
+            <Card.Section>
+              <Image 
+                src={element.cover}
+                height={500}
+                alt={element.album}
+              />
+            </Card.Section>
 
+            <Group justify="space-between" mt="md" mb="xs">
+              <Text fw={500}>{element.artist}</Text>
+              <Text fw={400}>{element.album}</Text>
+            </Group>
 
-      {album.map((element, i, arr) => {
-        return (
+            <Text size="sm" c="dimmed">
+              {element.year}
+            </Text>
 
-          <div key={i} className="albums-card imgCover">
-            <Card shadow="sm" padding="lg" radius="md" withBorder>
-              <Card.Section>
-                <Image 
-                  src={element.cover}
-                  height={500}
-                  alt="Cover"
-                />
-              </Card.Section>
-
-              <Group justify="space-between" mt="md" mb="xs">
-                <Text fw={500}>{element.artist}</Text>
-                <Text fw={400}>{element.album}</Text>
-
-              </Group>
-
-              <Text size="sm" c="dimmed">
-                {element.year}
-              </Text>
-              <Link to={`/album/${element.id}`}>
-                <Button color="#E5B864" fullWidth mt="md" radius="md">
-                  Details
-                </Button>
-              </Link>
-            </Card>
-          </div>
-        );
-      })}
+            <Link to={`/album/${element.id}`}>
+              <Button color="#E5B864" fullWidth mt="md" radius="md">
+                Details
+              </Button>
+            </Link>
+          </Card>
+        </div>
+      ))}
     </div>
   )
 }
+
 export default Home

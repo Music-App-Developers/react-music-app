@@ -1,44 +1,45 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-/* Navbar */
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     background-color: #E5B864;
     padding: 15px 30px;
+    position: relative;
 }
 
-/* Logo */
 .logo {
-max-width: 250px;
+    max-width: 250px;
+    z-index: 2;
 }
 
-/* Menú */
+/* Search centrada */
+.search-input {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    padding: 6px 12px;
+    border-radius: 12px;
+    border: none;
+    font-size: 14px;
+    outline: none;
+    transition: box-shadow 0.3s;
+    z-index: 2;
+}
+
+.search-input:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
 .menu {
     list-style: none;
     display: flex;
     gap: 25px;
     font-size: 20px;
+    z-index: 2;
 }
 
-.menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 16px;
-}
-
-.menu li {
-  display: flex;
-}
 .menu li a {
     color: #ffffff;
     text-decoration: none;
@@ -53,7 +54,72 @@ max-width: 250px;
 }
 
 .menu li a.active {
-  background-color: #904E55;
-  color: white;
-  border-radius: 4px;
+    background-color: #904E55;
+    color: white;
+    border-radius: 4px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media screen and (max-width: 1000px) {
+    .menu {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background-color: #E5B864;
+        flex-direction: column;
+        width: 200px;
+        text-align: center;
+        padding: 15px 0;
+        gap: 15px;
+        border-radius: 8px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .menu.open {
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .search-input {
+        position: relative;
+        left: 0;
+        transform: none;
+        width: 50%;
+        margin: 10px 0;
+    }
 }
