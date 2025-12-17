@@ -70,7 +70,24 @@ h1 {
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 31%;
+  
+  
 }
+
+.card {
+  background-color: #ECDFC4;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
 
 .Loader {
   margin: 20px auto;

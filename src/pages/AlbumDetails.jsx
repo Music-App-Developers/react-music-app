@@ -49,7 +49,7 @@ function AlbumDetails() {
 
 
   return (
-    <div className="album-container">
+    <div className="album-container card">
       <h1 className="album-header">{albumDetail.album}</h1>
       <img className="album-cover" src={albumDetail.cover} alt={albumDetail.album} />
       <h2 className="album-artist">{albumDetail.artist}</h2>

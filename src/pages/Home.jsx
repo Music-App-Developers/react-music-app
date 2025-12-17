@@ -38,17 +38,21 @@ function Home({ search }) {
   );
 
   return (
-    <div className="albums-grid">
-      {filteredAlbums.map((element, i) => (
-        <div key={i} className="albums-card imgCover">
-          <Card shadow="sm" padding="lg" radius="md" withBorder>
-            <Card.Section>
-              <Image 
-                src={element.cover}
-                height={500}
-                alt={element.album}
-              />
-            </Card.Section>
+    <div className="albums-grid card">
+
+
+      {album.map((element, i, arr) => {
+        return (
+
+          <div key={i} className="albums-card imgCover card">
+            <Card shadow="sm" padding="lg" radius="md" withBorder>
+              <Card.Section>
+                <Image 
+                  src={element.cover}
+                  height={500}
+                  alt="Cover"
+                />
+              </Card.Section>
 
             <Group justify="space-between" mt="md" mb="xs">
               <Text fw={500}>{element.artist}</Text>
