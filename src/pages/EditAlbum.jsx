@@ -12,6 +12,7 @@ function EditAlbum() {
     const [album, setAlbum] = useState("")
     const [artist, setArtist] = useState("")
     const [year, setYear] = useState("")
+    const [style, setStyle] = useState("")
     const [cover, setCover] = useState("")
     const [tracklist, setTracklist] = useState("")
 
@@ -26,6 +27,7 @@ function EditAlbum() {
                 setArtist(response.data.artist)
                 setCover(response.data.cover)
                 setYear(response.data.year)
+                setStyle(response.data.style)
                 setTracklist(response.data.tracklist)
 
             })
@@ -41,6 +43,7 @@ function EditAlbum() {
             album: album,
             artist: artist,
             year: year,
+            style: style,
             cover: cover,
             tracklist: tracklist
         }
@@ -92,6 +95,17 @@ function EditAlbum() {
                     required
                     value={year}
                     onChange={(e) => { setYear(e.target.value) }}
+                />
+            </label>
+            <br />
+            <label>
+                <input
+                    type="text"
+                    name="style"
+                    placeholder="Music Style"
+                    required
+                    value={style}
+                    onChange={(e) => { setStyle(e.target.value) }}
                 />
             </label>
             <br />

@@ -9,6 +9,7 @@ function AddYourAlbum() {
     const [album, setAlbum] = useState("")
     const [artist, setArtist] = useState("")
     const [year, setYear] = useState("")
+    const [style, setStyle] = useState("")
     const [cover, setCover] = useState("")
     const [tracklist, setTracklist] = useState("")
 
@@ -21,6 +22,7 @@ function AddYourAlbum() {
             album: album,
             artist: artist,
             year: year,
+            style, style,
             cover: cover,
             tracklist: tracklist
         }
@@ -60,6 +62,17 @@ function AddYourAlbum() {
                         required
                         value={artist}
                         onChange={(e) => { setArtist(e.target.value) }}
+                    />
+                </label>
+                 <br />
+                <label>
+                    <input
+                        type="text"
+                        name="style"
+                        placeholder="Music Style"
+                        required
+                        value={style}
+                        onChange={(e) => { setStyle(e.target.value) }}
                     />
                 </label>
                 <br />

@@ -53,8 +53,9 @@ function AlbumDetails() {
       <h1 className="album-header">{albumDetail.album}</h1>
       <img className="album-cover" src={albumDetail.cover} alt={albumDetail.album} />
       <h2 className="album-artist">{albumDetail.artist}</h2>
+      <h3 className="album-style">{albumDetail.style}</h3>
       <span className="album-year">{albumDetail.year}</span>
-      <h2 className="tracklist-title">Tracklist</h2>
+      <h2 className="tracklist-title"></h2>
   <ul className="tracklist">
   {albumDetail.tracklist
     .split(",")
