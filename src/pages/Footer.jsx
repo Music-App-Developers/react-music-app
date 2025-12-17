@@ -1,6 +1,6 @@
 function Footer () {
     return (
-        <p>This is Footer 2025</p>
+        <p>© 2025 Albumory. Todos los derechos reservados.</p>
     )
 }
 export default Footer

@@ -27,7 +27,7 @@ function App() {
         </Routes>
       </div>
 
-      <footer>
+      <footer className="footer">
         <Footer />
       </footer>
     </div>

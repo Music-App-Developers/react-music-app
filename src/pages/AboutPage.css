@@ -1,0 +1,84 @@
+/* About Us Page */
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #1f2933;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.about-subtitle {
+  font-size: 1.25rem;
+  color: #4b5563;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-section {
+  margin-bottom: 3rem;
+}
+
+.about-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.about-section p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #374151;
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.value-card {
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.value-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.about-footer {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.1rem;
+  }
+}
