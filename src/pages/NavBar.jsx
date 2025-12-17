@@ -4,7 +4,7 @@ import "./NavBar.css"
 function NavBar() {
     return (
         <nav className="navbar">
-            <h3 className="logo">Albumory Music App</h3>
+            <img className = "logo"src="src/images/albumory-logo.png" alt="" />
             <div className="menu">
                 <ul>
                 <li><NavLink to="/">Home</NavLink></li>

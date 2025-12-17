@@ -17,9 +17,7 @@
 
 /* Logo */
 .logo {
-    color: #ffffff;
-    font-size: 40px;
-    font-weight: bold;
+max-width: 250px;
 }
 
 /* Menú */
