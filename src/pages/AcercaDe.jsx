@@ -1,4 +1,5 @@
 import "../pages/AboutPage.css"
+import logo from "../images/albumory-logo.png"
 
 
 function AcerdaDe() {
@@ -14,6 +15,9 @@ function AcerdaDe() {
                 <a className="about-subtitle" href="https://github.com/GeX90">Jorge Jiménez Morgado</a>
             <br />
             <a className="about-subtitle" href="https://github.com/PauSerranoHerraiz">Pau Serrano Herráiz</a>
+        </div>
+        <div>
+            <img className = "logo"src={logo} alt="" />
         </div>
         </div>
 
