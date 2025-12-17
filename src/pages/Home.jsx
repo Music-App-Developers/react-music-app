@@ -67,7 +67,7 @@ function Home() {
                 {element.year}
               </Text>
               <Link to={`/album/${element.id}`}>
-                <Button color="orange" fullWidth mt="md" radius="md">
+                <Button color="#E5B864" fullWidth mt="md" radius="md">
                   Details
                 </Button>
               </Link>
