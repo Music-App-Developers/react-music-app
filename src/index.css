@@ -13,6 +13,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
