@@ -41,13 +41,13 @@ function Home() {
 
 
   return (
-    <div className="albums-grid">
+    <div className="albums-grid card">
 
 
       {album.map((element, i, arr) => {
         return (
 
-          <div key={i} className="albums-card imgCover">
+          <div key={i} className="albums-card imgCover card">
             <Card shadow="sm" padding="lg" radius="md" withBorder>
               <Card.Section>
                 <Image 
