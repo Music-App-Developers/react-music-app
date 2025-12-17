@@ -76,6 +76,10 @@ h1 {
   margin: 20px auto;
 }
 
+.footer {
+  background-color: #734E57;
+}
+
 @media (max-width: 800px) {
  body{
   display: flex;
