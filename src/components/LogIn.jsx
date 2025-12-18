@@ -1,12 +1,16 @@
 import { signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
 import { useEffect } from "react";
 import { auth, googleProvider } from "./firebase";
+import { useNavigate } from "react-router-dom";
 
 function LogIn() {
+  const navigate = useNavigate();
+
   const loginWithGoogle = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       console.log("Usuario autenticado:", result.user);
+      navigate("/");
     } catch (error) {
       console.error(error.message);
     }
@@ -14,6 +18,7 @@ function LogIn() {
 
   const logout = async () => {
     await signOut(auth);
+    navigate("/");
   };
 
   useEffect(() => {

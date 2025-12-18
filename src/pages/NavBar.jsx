@@ -2,9 +2,11 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import logo from "../images/albumory-logo.png"
 import "./NavBar.css"
+import { useAuth } from "../contexts/AuthContext"
 
 function NavBar({ search, setSearch }) {
     const [menuOpen, setMenuOpen] = useState(false)
+    const { user } = useAuth();
 
     return (
         <nav className="navbar">
@@ -20,7 +22,7 @@ function NavBar({ search, setSearch }) {
 
             <ul className={`menu ${menuOpen ? 'open' : ''}`}>
                 <li><NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink></li>
-                <li><NavLink to="/newalbum" onClick={() => setMenuOpen(false)}>Add Album</NavLink></li>
+                {user && <li><NavLink to="/newalbum" onClick={() => setMenuOpen(false)}>Add Album</NavLink></li>}
                 <li><NavLink to="/acercade" onClick={() => setMenuOpen(false)}>About us</NavLink></li>
                 <li><NavLink to="/login" onClick={() => setMenuOpen(false)}>LogIn</NavLink></li>
             </ul>
