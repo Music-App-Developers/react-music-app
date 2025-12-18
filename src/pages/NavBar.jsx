@@ -22,6 +22,7 @@ function NavBar({ search, setSearch }) {
                 <li><NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink></li>
                 <li><NavLink to="/newalbum" onClick={() => setMenuOpen(false)}>Add Album</NavLink></li>
                 <li><NavLink to="/acercade" onClick={() => setMenuOpen(false)}>About us</NavLink></li>
+                <li><NavLink to="/login" onClick={() => setMenuOpen(false)}>LogIn</NavLink></li>
             </ul>
 
             <div

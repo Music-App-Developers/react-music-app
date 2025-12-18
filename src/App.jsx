@@ -8,8 +8,9 @@ import AlbumDetails from "./pages/AlbumDetails"
 import EditAlbum from "./pages/EditAlbum"
 import { useState } from "react"
 
-
+import LogIn from "./components/LogIn"
 function App() {
+
 
   const [search, setSearch] = useState("")
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/acercade" element={<AcerdaDe />} />
           <Route path="/album/:albumId" element={<AlbumDetails />} />
           <Route path="/albums/edit/:albumId" element={<EditAlbum />} />
+          <Route path="/login" element={<LogIn />} />
 
 
         </Routes>
