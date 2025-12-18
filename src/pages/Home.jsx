@@ -38,41 +38,49 @@ function Home({ search }) {
   );
 
   return (
-    <div className="albums-grid card">
+  <div className="albums-grid">
+    {filteredAlbums.length === 0 && (
+      <p>No albums found</p>
+    )}
 
+    {filteredAlbums.map((element) => (
+      <div key={element.id} className="albums-card imgCover card">
+        <Card shadow="sm" padding="lg" radius="md" withBorder>
 
-      {album.map((element, i, arr) => {
-        return (
+          <Card.Section>
+            <Image
+              src={element.cover}
+              height={300}
+              fit="cover"
+              alt={`${element.artist} - ${element.album}`}
+            />
+          </Card.Section>
 
-          <div key={i} className="albums-card imgCover card">
-            <Card shadow="sm" padding="lg" radius="md" withBorder>
-              <Card.Section>
-                <Image 
-                  src={element.cover}
-                  height={500}
-                  alt="Cover"
-                />
-              </Card.Section>
+          <Group justify="space-between" mt="md" mb="xs">
+            <Text fw={500}>{element.artist}</Text>
+            <Text fw={400}>{element.album}</Text>
+          </Group>
 
-            <Group justify="space-between" mt="md" mb="xs">
-              <Text fw={500}>{element.artist}</Text>
-              <Text fw={400}>{element.album}</Text>
-            </Group>
+          <Text size="sm" c="dimmed">
+            {element.year}
+          </Text>
 
-            <Text size="sm" c="dimmed">
-              {element.year}
-            </Text>
+          <Button
+            component={Link}
+            to={`/album/${element.id}`}
+            color="#E5B864"
+            fullWidth
+            mt="md"
+            radius="md"
+          >
+            Details
+          </Button>
 
-            <Link to={`/album/${element.id}`}>
-              <Button color="#E5B864" fullWidth mt="md" radius="md">
-                Details
-              </Button>
-            </Link>
-          </Card>
-        </div>
-      ))}
-    </div>
-  )
+        </Card>
+      </div>
+    ))}
+  </div>
+);
 }
 
 export default Home
