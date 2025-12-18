@@ -3,9 +3,12 @@
     align-items: center;
     justify-content: space-between;
     background-color: #E5B864;
-    padding: 15px 30px;
-    position: relative;
+    padding: 6px 30px;
     overflow-x: hidden;
+    box-shadow: 0px 4px 8px 0px #714a4e;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
@@ -19,20 +22,23 @@
   border-radius: 12px;
 }
 
+.navbar .search-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
 
 .search-input {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    padding: 6px 12px;
-    border-radius: 12px;
-    border: none;
-    font-size: 14px;
-    outline: none;
-    transition: box-shadow 0.3s;
-    z-index: 2;
+  width: 300px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+  transition: box-shadow 0.3s;
+  z-index: 2;
 }
+
 
 
 
