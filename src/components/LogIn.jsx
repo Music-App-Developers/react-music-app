@@ -2,6 +2,7 @@ import { signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
 import { useEffect } from "react";
 import { auth, googleProvider } from "./firebase";
 import { useNavigate } from "react-router-dom";
+import "./LogIn.css"
 
 function LogIn() {
   const navigate = useNavigate();
@@ -34,16 +35,19 @@ function LogIn() {
   }, []);
 
   return (
-    <div>
-      <h2>Login con Google</h2>
-      <button onClick={loginWithGoogle}>
-        Iniciar sesión con Google
-      </button>
+    <div className="login-container">
+  <div className="login-card">
+    <h2>Login con Google</h2>
 
-      <button onClick={logout}>
-        Cerrar sesión
-      </button>
-    </div>
+    <button onClick={loginWithGoogle}>
+      Iniciar sesión con Google
+    </button>
+
+    <button onClick={logout}>
+      Cerrar sesión
+    </button>
+  </div>
+</div>
   );
 }
 
