@@ -13,7 +13,7 @@ function NavBar({ search, setSearch }) {
             <input
                 type="text"
                 className="search-input"
-                placeholder="Search album, artist or year"
+                placeholder="Search album, artist, year or style"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
             />

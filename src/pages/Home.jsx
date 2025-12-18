@@ -33,7 +33,8 @@ function Home({ search }) {
 
   const filteredAlbums = album.filter(a =>
     a.artist.toLowerCase().includes(search.toLowerCase()) ||
-    a.album.toLowerCase().includes(search.toLowerCase()) ||
+    a.album.toLowerCase().includes(search.toLowerCase()) || 
+    a.style?.toLowerCase().includes(search.toLowerCase()) ||
     a.year.toString().includes(search)
   );
 
@@ -59,6 +60,7 @@ function Home({ search }) {
           <Group justify="space-between" mt="md" mb="xs">
             <Text fw={500}>{element.artist}</Text>
             <Text fw={400}>{element.album}</Text>
+            <Text fw={400}>{element.style}</Text>
           </Group>
 
           <Text size="sm" c="dimmed">
