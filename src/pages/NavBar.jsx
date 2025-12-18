@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom"
 import logo from "../images/albumory-logo.png"
 import "./NavBar.css"
 import { useAuth } from "../contexts/AuthContext"
-import { signOut } from "firebase/auth"; // Importa signOut
-import { auth } from "../components/firebase"; // Asegúrate de que la ruta a firebase sea correcta
+import { signOut } from "firebase/auth"; 
+import { auth } from "../components/firebase"; 
 
 function NavBar({ search, setSearch }) {
     const [menuOpen, setMenuOpen] = useState(false)

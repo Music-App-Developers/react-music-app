@@ -60,7 +60,7 @@ function Home({ search }) {
           <Group justify="space-between" mt="md" mb="xs">
             <Text fw={500}>{element.artist}</Text>
             <Text fw={400}>{element.album}</Text>
-            <Text fw={450}>{element.style}</Text>
+            <Text className="genre" fw={450}>{element.style}</Text>
           </Group>
 
           <Text size="sm" c="dimmed">

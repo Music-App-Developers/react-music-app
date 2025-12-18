@@ -1,5 +1,3 @@
-/* About Us Page */
-
 .about-container {
   max-width: 900px;
   margin: 0 auto;
@@ -71,8 +69,6 @@
   font-size: 0.9rem;
   color: #6b7280;
 }
-
-/* Responsive */
 
 @media (max-width: 600px) {
   .about-title {

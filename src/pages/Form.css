@@ -94,3 +94,8 @@
     font-size: 50px;
     color: #6B6B6B;
 }
+
+.music-form-group label {
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
