@@ -64,8 +64,7 @@ function EditAlbum() {
         <form className="body" onSubmit={handleSubmit}>
             <h2 className="form">Edit album</h2>
             <div className="music-form-group">
-            <label>
-
+            <label>Album: <br />
                 <input
                     type="text"
                     name="album"
@@ -76,7 +75,7 @@ function EditAlbum() {
                 />
             </label>
             <br />
-            <label>
+            <label>Artist: <br />
                 <input
                     type="text"
                     name="artist"
@@ -87,7 +86,7 @@ function EditAlbum() {
                 />
             </label>
             <br />
-            <label>
+            <label>Year: <br />
                 <input
                     type="number"
                     name="Year"
@@ -98,7 +97,7 @@ function EditAlbum() {
                 />
             </label>
             <br />
-            <label>
+            <label>Style: <br />
                 <input
                     type="text"
                     name="style"
@@ -109,7 +108,7 @@ function EditAlbum() {
                 />
             </label>
             <br />
-            <label>
+            <label>Cover Img <br />
                 <input
                     type="url"
                     name="cover"
@@ -120,7 +119,7 @@ function EditAlbum() {
                 />
             </label>
             <br />
-            <label>
+            <label>Album tracks (separate the tracks with commas): <br />
                 <input
                     type="text"
                     name="tracklist"

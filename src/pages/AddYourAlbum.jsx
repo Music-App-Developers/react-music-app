@@ -43,32 +43,32 @@ function AddYourAlbum() {
         <form className="body" onSubmit={handleSubmit}>
             <h2 className="form">Add album</h2>
             <div className="music-form-group">
-                <label>
+                <label>Album: <br />
                     <input
                         type="text"
                         name="album"
-                        placeholder="Album"
+                        placeholder="Abbey Road"
                         required
                         value={album}
                         onChange={(e) => { setAlbum(e.target.value) }}
                     />
                 </label>
                 <br />
-                <label>
+                <label>Artist: <br />
                     <input
                         type="text"
                         name="artist"
-                        placeholder="Album Artist"
+                        placeholder="The Beatles"
                         required
                         value={artist}
                         onChange={(e) => { setArtist(e.target.value) }}
                     />
                 </label>
                  <br />
-                <label>
+                <label>Style: <br />
                     <input
                         type="text"
-                        name="style"
+                        name="Rock"
                         placeholder="Music Style"
                         required
                         value={style}
@@ -76,11 +76,11 @@ function AddYourAlbum() {
                     />
                 </label>
                 <br />
-                <label>
+                <label>Year: <br />
                     <input
                         type="number"
                         name="Year"
-                        placeholder="Album Year"
+                        placeholder="1969"
                         min={1940}
                         max={2030}
                         required
@@ -89,22 +89,22 @@ function AddYourAlbum() {
                     />
                 </label>
                 <br />
-                <label>
+                <label>Cover Img: <br />
                     <input
                         type="url"
                         name="cover"
-                        placeholder="Image Url"
+                        placeholder="http://imageURLexample.com/abbeyroad.jpg"
 
                         value={cover}
                         onChange={(e) => { setCover(e.target.value) }}
                     />
                 </label>
                 <br />
-                <label>
+                <label>Album tracks (separate the tracks with commas): <br />
                     <textarea
                         type="text"
                         name="tracklist"
-                        placeholder="Album Tracks"
+                        placeholder="Come Together, Something, Maxwell’s Silver Hammer, Oh! Darling, Octopus’s Garden, I Want You (She’s So Heavy), Here Comes the Sun, Because, You Never Give Me Your Money, Sun King, Mean Mr. Mustard, Polythene Pam, She Came In Through the Bathroom Window, Golden Slumbers, Carry That Weight, The End, Her Majesty"
 
                         value={tracklist}
                         onChange={(e) => { setTracklist(e.target.value) }}
