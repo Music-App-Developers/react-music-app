@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +12,6 @@ body {
   
 }
 
-/* Contenedor principal */
 .album-container {
   max-width: 800px;
   margin: 40px auto;
@@ -22,14 +21,12 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* Header del álbum */
 .album-header {
   display: center;
   gap: 24px;
   margin-bottom: 32px;
 }
 
-/* Portada */
 .album-cover {
   width: 300px;
   height: 300px;
@@ -38,7 +35,6 @@ body {
   background-color: #ddd;
 }
 
-/* Info del álbum */
 .album-info {
   display: flex;
   flex-direction: column;
@@ -62,7 +58,6 @@ body {
   color: #999;
 }
 
-/* Tracklist */
 .tracklist {
   list-style: none;
   margin-top: 16px;
@@ -101,14 +96,11 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-/* Hover sutil */
 .track:hover {
   background-color: #fafafa;
 }
 
-/*CSS Button
 
-/* Contenedor opcional */
 .btn-action {
   padding: 8px 14px;
   border: none;
@@ -119,7 +111,6 @@ body {
   transition: all 0.25s ease;
 }
 
-/* Botón Editar */
 .btn-edit {
   background-color: #E5B864; /* azul */
   color: #ffffff;
@@ -131,9 +122,8 @@ body {
   box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
 }
 
-/* Botón Delete */
 .btn-delete {
-  background-color: #ef4444; /* rojo */
+  background-color: #ef4444; 
   color: #ffffff;
   margin: 5px;
 }
@@ -143,13 +133,11 @@ body {
   box-shadow: 0 6px 12px rgba(239, 68, 68, 0.3);
 }
 
-/* Efecto click */
 .btn-action:active {
   transform: scale(0.96);
 }
 
 
-/* Responsive */
 @media (max-width: 600px) {
   .album-header {
     flex-direction: column;
