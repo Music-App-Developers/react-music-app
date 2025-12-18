@@ -1,3 +1,4 @@
+
 .navbar {
     display: flex;
     align-items: center;
@@ -12,7 +13,6 @@
     z-index: 2;
 }
 
-/* Search centrada */
 .search-input {
     position: absolute;
     left: 50%;
@@ -30,7 +30,6 @@
 .search-input:focus {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
-
 
 .menu {
     list-style: none;
@@ -78,7 +77,6 @@
     transition: all 0.3s ease;
 }
 
-
 .hamburger.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
@@ -92,34 +90,64 @@
 }
 
 @media screen and (max-width: 1000px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .logo {
+        max-width: 180px;
+    }
+
+    .search-input {
+        position: static;
+        transform: none;
+        width: 100%;
+        order: 3;
+        margin-top: 10px;
+    }
+
+    .hamburger {
+        display: flex;
+        order: 2;
+    }
+
     .menu {
         position: absolute;
         top: 65px;
-        right: 0;
+        right: -220px;
         background-color: #E5B864;
         flex-direction: column;
+        align-items: stretch;
         width: 200px;
         text-align: center;
         padding: 15px 0;
         gap: 15px;
         border-radius: 8px;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition: right 0.3s ease, opacity 0.2s ease;
+        z-index: 10;
     }
 
     .menu.open {
-        transform: translateX(0);
+        right: 0;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 
-    .hamburger {
-        display: flex;
+    .menu li {
+        width: 100%;
     }
 
-    .search-input {
-        position: relative;
-        left: 0;
-        transform: none;
-        width: 50%;
-        margin: 10px 0;
+    .menu li a {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
     }
 }
