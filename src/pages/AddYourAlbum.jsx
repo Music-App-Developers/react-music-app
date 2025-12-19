@@ -69,7 +69,7 @@ function AddYourAlbum() {
                     <input
                         type="text"
                         name="Rock"
-                        placeholder="Music Style"
+                        placeholder="Rock"
                         required
                         value={style}
                         onChange={(e) => { setStyle(e.target.value) }}
